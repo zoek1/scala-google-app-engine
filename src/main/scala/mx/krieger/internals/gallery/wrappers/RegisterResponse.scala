@@ -13,4 +13,11 @@ class RegisterRequest {
   @BeanProperty var lastname: String = _
   @BeanProperty var age: Int = _
   @BeanProperty var url: String = _
+
+  def this(firstname: String, lastname: String, age : Int) {
+    this()
+    this.firstname = firstname
+    this.lastname  = lastname
+    this.age = age
+  }
 }
