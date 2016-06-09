@@ -17,7 +17,7 @@ class QueryUsers {
     path="sortByParent",
     httpMethod = "GET",
     authLevel = AuthLevel.NONE)
-  def sortByParent(): util.ArrayList[RegisterUserProfile] = {
+  def sortByParent(): util.List[RegisterUserProfile] = {
 
     val reg = new RegisterUserProfile()
     val l = new util.ArrayList[RegisterUserProfile]()
@@ -27,12 +27,11 @@ class QueryUsers {
       .load
       .`type`( new RegisterUserProfile().getClass )
       .order("lastname")
-      .list.toList
+      .list
 
-    for (element <- list) {
-      l.add(element)
+    list match {
+      case list: util.List[RegisterUserProfile @unchecked] => list
+      case _ => new util.ArrayList[RegisterUserProfile]()
     }
-
-    l
   }
 }
