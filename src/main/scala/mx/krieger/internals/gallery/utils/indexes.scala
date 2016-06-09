@@ -10,7 +10,7 @@ object Indexes {
     MessageDigest.getInstance("MD5").digest(s.getBytes)
   }
 
-  def generateIndex(fact: String): String = {
+  def generateIndex(fact: String = "hotdog"): String = {
     val date = new Date().getTime.toString
     val hashName = md5(fact)
     val extra = Math.abs(random.nextInt())

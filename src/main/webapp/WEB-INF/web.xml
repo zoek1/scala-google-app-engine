@@ -6,7 +6,7 @@
     <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
     <init-param>
       <param-name>services</param-name>
-      <param-value>mx.krieger.internals.gallery.App</param-value>
+      <param-value>mx.krieger.internals.gallery.api.App, mx.krieger.internals.gallery.api.QueryUsers</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>
